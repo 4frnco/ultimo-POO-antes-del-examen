@@ -21,3 +21,11 @@ class Pedido:
     def engadirProduto (self, produto, cantidade):
         if produto.decrementarStock(cantidade):
             self.cestaPedido.append ((produto, cantidade))
+
+    def calculoPrezoTotal (self):
+        total = 0
+        for entrada in self.cestaPedido:
+            total = total + entrada[1] * entrada[0].getPrezo()
+
+
+
