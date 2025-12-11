@@ -26,6 +26,16 @@ class Pedido:
         total = 0
         for entrada in self.cestaPedido:
             total = total + entrada[1] * entrada[0].getPrezo()
+        return total
+
+p = Pedido (Cliente ('Manuel', 'm@gmail.com', 'aqui','36201')(Data(23, 3, 2025)))
+
+peras = Produto('Peras', '2', '100')
+manzana = Produto('Manzana', '1.50', '100')
+
+p.engadirProduto(peras,2)
+p.engadirProduto(manzana, 2)
+print (p.calculoPrezoTotal())
 
 
 
