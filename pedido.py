@@ -19,5 +19,5 @@ class Pedido:
         return self.data
 
     def engadirProduto (self, produto, cantidade):
-
-        self.cestaPedido.append ((produto, cantidade))
+        if produto.decrementarStock(cantidade):
+            self.cestaPedido.append ((produto, cantidade))
